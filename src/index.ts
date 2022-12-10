@@ -71,6 +71,8 @@ function primaryWindow() {
           )
         
         win.removeMenu()
+        win.loadURL("https://ev.io/")
+        
         win.webContents.on('before-input-event', (event, input) => {
           if (input.key === "F5") { win.reload(); event.preventDefault() }
           if (input.key === "F6") { win.loadURL("https://ev.io"); event.preventDefault() }
@@ -78,8 +80,9 @@ function primaryWindow() {
           if (input.key === "F8") {win.loadURL("https://ev.io/user/login"); event.preventDefault()}
           if (input.key === "F11") { win.setFullScreen(!win.isFullScreen()); event.preventDefault() }
         });
-        win.loadURL("https://ev.io/")
+
     win.once("ready-to-show", () => { win.show(); });
+
 
 }
 
