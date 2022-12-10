@@ -2,7 +2,7 @@
   "name": "opal-client-4",
   "version": "4.0.0",
   "description": "ev.io client with a host of optimizations",
-  "main": "dist/index.js/",
+  "main": "js/index.js/",
   "author": "Opal",
   "license": "MIT",
   "private": false,
@@ -10,12 +10,26 @@
   "scripts": {
     "run": "start &&  compile",
     "start": "electron . ",
-    "compile": "tsc"
+    "compile": "tsc",
+    "build": "electron-builder"
   },
   "devDependencies": {
     "@types/electron": "^1.6.10",
     "electron": "10.4.7",
     "electron-builder": "^23.6.0",
     "typescript": "^4.9.3"
+  },
+  
+  "build": {
+    "appId": "com.opal.opal_client",
+    "productName": "Opal Client",
+    "icon": "opal.ico",
+    "target": "NSIS",
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false,
+      "installerIcon": "opal.ico",
+      "uninstallerIcon": "opal.ico"
+    }
   }
 }
