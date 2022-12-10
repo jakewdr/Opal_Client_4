@@ -1,0 +1,21 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "name": "Community Patch - ev.io",
+  "version": "2.2.0",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches":["https://ev.io/"],
+      "js": [
+        "a.js"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "i.png",
+    "32": "i.png",
+    "48": "i.png",
+    "128": "i.png"
+  }
+}
