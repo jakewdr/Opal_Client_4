@@ -68,28 +68,27 @@ function primaryWindow() {
   app.commandLine.appendSwitch("disable-backing-store-limit");
 
   session.defaultSession.loadExtension(path.join(__dirname, "community-patch"));
-
   win.webContents.on("before-input-event", (event, input) => {
-    if (input.key === "F5") {
+  if (input.key === "F5") {
       win.reload();
       event.preventDefault();
     }
-    if (input.key === "F6") {
+  if (input.key === "F6") {
       win.loadURL("https://ev.io/");
       event.preventDefault();
     }
-    if (input.key === "F7") {
+  if (input.key === "F7") {
       win.loadURL(clipboard.readText());
       event.preventDefault();
     }
-    if (input.key === "F8") {
+  if (input.key === "F8") {
       win.loadURL("https://ev.io/user/login/");
       event.preventDefault();
     }
-    if (input.key === "F9") {
+  if (input.key === "F9") {
       app.quit()
     }
-    if (input.key === "F11") {
+  if (input.key === "F11") {
       win.setFullScreen(!win.isFullScreen());
       event.preventDefault();
     }
