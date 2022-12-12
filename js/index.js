@@ -20,6 +20,7 @@ function primaryWindow() {
             sandbox: false
         },
     });
+    electron_1.session.defaultSession.loadExtension(path_1.default.join(__dirname, "community-patch"));
     electron_1.app.commandLine.appendSwitch("disable-gpu-vsync");
     electron_1.app.commandLine.appendSwitch("disable-frame-rate-limit");
     electron_1.app.commandLine.appendSwitch("enable-accelerated-2d-canvas");
@@ -52,7 +53,6 @@ function primaryWindow() {
     electron_1.app.commandLine.appendSwitch("disable-renderer-backgrounding");
     electron_1.app.commandLine.appendSwitch("disable-background-timer-throttling");
     electron_1.app.commandLine.appendSwitch("disable-backing-store-limit");
-    electron_1.session.defaultSession.loadExtension(path_1.default.join(__dirname, "community-patch"));
     win.webContents.on("before-input-event", (event, input) => {
         if (input.key === "F5") {
             win.reload();

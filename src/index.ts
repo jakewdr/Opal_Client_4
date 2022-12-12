@@ -16,6 +16,8 @@ function primaryWindow() {
       sandbox: false
     },
   });
+  
+  session.defaultSession.loadExtension(path.join(__dirname, "community-patch"));
 
   // Video ->
 
@@ -66,8 +68,7 @@ function primaryWindow() {
   app.commandLine.appendSwitch("disable-renderer-backgrounding");
   app.commandLine.appendSwitch("disable-background-timer-throttling");
   app.commandLine.appendSwitch("disable-backing-store-limit");
-
-  session.defaultSession.loadExtension(path.join(__dirname, "community-patch"));
+ 
   win.webContents.on("before-input-event", (event, input) => {
   if (input.key === "F5") {
       win.reload();
