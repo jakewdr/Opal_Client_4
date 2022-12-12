@@ -1,4 +1,4 @@
-import { app, BrowserWindow, session, screen, clipboard, ipcMain } from "electron";
+import { app, BrowserWindow, session, screen, clipboard} from "electron";
 import path from "path";
 
 function primaryWindow() {
