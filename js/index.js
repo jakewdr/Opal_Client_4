@@ -20,28 +20,22 @@ function primaryWindow() {
             sandbox: false
         },
     });
-    // Video ->
     electron_1.app.commandLine.appendSwitch("disable-gpu-vsync");
     electron_1.app.commandLine.appendSwitch("disable-frame-rate-limit");
     electron_1.app.commandLine.appendSwitch("enable-accelerated-2d-canvas");
     electron_1.app.commandLine.appendSwitch("double-buffer-compositing");
     electron_1.app.commandLine.appendSwitch("force_high_performance_gpu");
     electron_1.app.commandLine.appendSwitch("max-gum-fps=9999");
-    // Audio ->
     electron_1.app.commandLine.appendSwitch("alsa-enable-upsampling");
     electron_1.app.commandLine.appendSwitch("audio-process-high-priority");
     electron_1.app.commandLine.appendSwitch("enable-exclusive-audio");
-    // Networking ->
     electron_1.app.commandLine.appendSwitch("disable-background-networking");
     electron_1.app.commandLine.appendSwitch("enable-quic");
-    //General ->
     electron_1.app.commandLine.appendSwitch("no-sandbox-and-elevated");
     electron_1.app.commandLine.appendSwitch("disable-low-end-device-mode");
     electron_1.app.commandLine.appendSwitch("ignore-gpu-blacklist");
-    // Input ->
     electron_1.app.commandLine.appendSwitch("allow-pre-commit-input");
     electron_1.app.commandLine.appendSwitch("disable-third-party-keyboard-workaround");
-    // Unnecessary Stuff ->
     electron_1.app.commandLine.appendSwitch("disable-breakpad");
     electron_1.app.commandLine.appendSwitch("disable-component-update");
     electron_1.app.commandLine.appendSwitch("disable-print-preview");
