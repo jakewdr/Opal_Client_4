@@ -1,4 +1,4 @@
-import { app, BrowserWindow, session, screen, clipboard } from "electron";
+import { app, BrowserWindow, session, screen, clipboard, ipcMain } from "electron";
 import path from "path";
 
 function primaryWindow() {
@@ -9,6 +9,7 @@ function primaryWindow() {
     webPreferences: {
       nodeIntegration: false,
       nodeIntegrationInWorker: false,
+      enableRemoteModule: true,
       webSecurity: false,
       contextIsolation: false,
       devTools: true,
@@ -68,16 +69,13 @@ function primaryWindow() {
 
   session.defaultSession.loadExtension(path.join(__dirname, "community-patch"));
 
-  win.removeMenu();
-  win.loadURL("https://ev.io/");
-
   win.webContents.on("before-input-event", (event, input) => {
     if (input.key === "F5") {
       win.reload();
       event.preventDefault();
     }
     if (input.key === "F6") {
-      win.loadURL("https://ev.io");
+      win.loadURL("https://ev.io/");
       event.preventDefault();
     }
     if (input.key === "F7") {
@@ -85,11 +83,10 @@ function primaryWindow() {
       event.preventDefault();
     }
     if (input.key === "F8") {
-      win.loadURL("https://ev.io/user/login");
+      win.loadURL("https://ev.io/user/login/");
       event.preventDefault();
     }
     if (input.key === "F9") {
-      win.close()
       app.quit()
     }
     if (input.key === "F11") {
@@ -98,16 +95,22 @@ function primaryWindow() {
     }
   });
 
-  win.once("ready-to-show", () => {
+  win.removeMenu();
+  win.loadURL("https://ev.io/");
+
+ win.once("ready-to-show", () => {
     win.show();
   });
 }
+
+app.on("window-all-closed", function () {
+  if (process.platform !== "darwin") {
+    app.quit();
+  }
+});
 
 app.on("ready", () => {
   console.log("App is ready to run");
   primaryWindow();
 });
 
-app.on("window-all-closed", () => {
-  app.quit();
-});

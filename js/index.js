@@ -13,6 +13,7 @@ function primaryWindow() {
         webPreferences: {
             nodeIntegration: false,
             nodeIntegrationInWorker: false,
+            enableRemoteModule: true,
             webSecurity: false,
             contextIsolation: false,
             devTools: true,
@@ -58,15 +59,13 @@ function primaryWindow() {
     electron_1.app.commandLine.appendSwitch("disable-background-timer-throttling");
     electron_1.app.commandLine.appendSwitch("disable-backing-store-limit");
     electron_1.session.defaultSession.loadExtension(path_1.default.join(__dirname, "community-patch"));
-    win.removeMenu();
-    win.loadURL("https://ev.io/");
     win.webContents.on("before-input-event", (event, input) => {
         if (input.key === "F5") {
             win.reload();
             event.preventDefault();
         }
         if (input.key === "F6") {
-            win.loadURL("https://ev.io");
+            win.loadURL("https://ev.io/");
             event.preventDefault();
         }
         if (input.key === "F7") {
@@ -74,11 +73,10 @@ function primaryWindow() {
             event.preventDefault();
         }
         if (input.key === "F8") {
-            win.loadURL("https://ev.io/user/login");
+            win.loadURL("https://ev.io/user/login/");
             event.preventDefault();
         }
         if (input.key === "F9") {
-            win.close();
             electron_1.app.quit();
         }
         if (input.key === "F11") {
@@ -86,15 +84,19 @@ function primaryWindow() {
             event.preventDefault();
         }
     });
+    win.removeMenu();
+    win.loadURL("https://ev.io/");
     win.once("ready-to-show", () => {
         win.show();
     });
 }
+electron_1.app.on("window-all-closed", function () {
+    if (process.platform !== "darwin") {
+        electron_1.app.quit();
+    }
+});
 electron_1.app.on("ready", () => {
     console.log("App is ready to run");
     primaryWindow();
-});
-electron_1.app.on("window-all-closed", () => {
-    electron_1.app.quit();
 });
 //# sourceMappingURL=index.js.map
