@@ -5,6 +5,8 @@
         "target": "ESNext",
         "sourceMap": true,
         "outDir": "js",
+        "preserveConstEnums": true,
+        "removeComments": true
     },
     "include": ["src/**/*"]
 }
