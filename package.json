@@ -22,7 +22,7 @@
   "dependencies": {
     "v8-compile-cache": "^2.3.0"
   },
-  
+
   "build": {
     "appId": "com.opal.opal_client",
     "productName": "Opal Client",
