@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const electron_1 = require("electron");
 const path_1 = __importDefault(require("path"));
+require('v8-compile-cache');
 function primaryWindow() {
     const { width, height } = electron_1.screen.getPrimaryDisplay().workAreaSize;
     const win = new electron_1.BrowserWindow({
