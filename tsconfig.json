@@ -9,5 +9,5 @@
         "removeComments": true,
         "disableSizeLimit": true
     },
-    "include": ["src/**/*"]
+    "include": ["ts/**/*"]
 }
