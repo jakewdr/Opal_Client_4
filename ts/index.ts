@@ -49,6 +49,7 @@ function primaryWindow() {
   // Input ->
 
   app.commandLine.appendSwitch("allow-pre-commit-input");
+  app.commandLine.appendSwitch("enable-pointer-lock-options");
   app.commandLine.appendSwitch("disable-third-party-keyboard-workaround");
 
   // Unnecessary Stuff ->
