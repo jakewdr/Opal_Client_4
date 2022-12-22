@@ -7,7 +7,7 @@ Then run `'yarn install'`
 Afterwards run 
 `'yarn run compile'` and
 
-`yarn run start'`
+`'yarn run start'`
 
 # Shortcuts
 
