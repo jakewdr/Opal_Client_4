@@ -37,7 +37,6 @@ function primaryWindow() {
     electron_1.app.commandLine.appendSwitch("disable-low-end-device-mode");
     electron_1.app.commandLine.appendSwitch("ignore-gpu-blacklist");
     electron_1.app.commandLine.appendSwitch("allow-pre-commit-input");
-    electron_1.app.commandLine.appendSwitch("enable-pointer-lock-options");
     electron_1.app.commandLine.appendSwitch("disable-third-party-keyboard-workaround");
     electron_1.app.commandLine.appendSwitch("disable-breakpad");
     electron_1.app.commandLine.appendSwitch("disable-component-update");
