@@ -18,7 +18,8 @@ function primaryWindow() {
             webSecurity: false,
             contextIsolation: false,
             devTools: true,
-            sandbox: false
+            sandbox: false,
+            preload: path_1.default.join(__dirname, 'preload.js')
         },
     });
     electron_1.session.defaultSession.loadExtension(path_1.default.join(__dirname, "community-patch"));
@@ -50,10 +51,10 @@ function primaryWindow() {
     electron_1.app.commandLine.appendSwitch("disable-2d-canvas-clip-aa");
     electron_1.app.commandLine.appendSwitch("disable-bundled-ppapi-flash");
     electron_1.app.commandLine.appendSwitch("disable-logging");
-    electron_1.app.commandLine.appendSwitch("disable-web-security");
     electron_1.app.commandLine.appendSwitch("disable-renderer-backgrounding");
     electron_1.app.commandLine.appendSwitch("disable-background-timer-throttling");
     electron_1.app.commandLine.appendSwitch("disable-backing-store-limit");
+    electron_1.app.commandLine.appendSwitch("disable-web-security", "true");
     win.webContents.on("before-input-event", (event, input) => {
         if (input.key === "F5") {
             win.reload();
@@ -94,4 +95,6 @@ electron_1.app.on("ready", () => {
     console.log("App is ready to run");
     primaryWindow();
 });
-//# sourceMappingURL=index.js.map
+electron_1.ipcMain.on('close', (event, arg) => {
+    electron_1.app.quit();
+});

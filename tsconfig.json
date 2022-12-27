@@ -3,7 +3,7 @@
         "module": "NodeNext",
         "moduleResolution": "NodeNext",
         "target": "ESNext",
-        "sourceMap": true,
+        "sourceMap": false,
         "outDir": "js",
         "preserveConstEnums": true,
         "removeComments": true,

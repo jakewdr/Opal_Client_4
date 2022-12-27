@@ -8,7 +8,7 @@
   "private": false,
   "tpye": "module",
   "scripts": {
-    "start": "electron . ",
+    "start": "tsc && electron . ",
     "compile": "tsc",
     "build": "electron-builder"
   },

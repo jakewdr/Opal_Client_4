@@ -1,4 +1,4 @@
-import { app, BrowserWindow, session, screen, clipboard} from "electron";
+import { app, BrowserWindow, session, screen, clipboard, ipcMain} from "electron";
 import path from "path";
 require('v8-compile-cache');
 
@@ -14,7 +14,8 @@ function primaryWindow() {
       webSecurity: false,
       contextIsolation: false,
       devTools: true,
-      sandbox: false
+      sandbox: false,
+      preload: path.join(__dirname, 'preload.js')
     },
   });
   
@@ -65,10 +66,10 @@ function primaryWindow() {
   app.commandLine.appendSwitch("disable-2d-canvas-clip-aa");
   app.commandLine.appendSwitch("disable-bundled-ppapi-flash");
   app.commandLine.appendSwitch("disable-logging");
-  app.commandLine.appendSwitch("disable-web-security");
   app.commandLine.appendSwitch("disable-renderer-backgrounding");
   app.commandLine.appendSwitch("disable-background-timer-throttling");
   app.commandLine.appendSwitch("disable-backing-store-limit");
+  app.commandLine.appendSwitch("disable-web-security", "true")
  
   win.webContents.on("before-input-event", (event, input) => {
   if (input.key === "F5") {
@@ -114,4 +115,8 @@ app.on("ready", () => {
   console.log("App is ready to run");
   primaryWindow();
 });
+
+ipcMain.on('close', (event, arg) => {
+  app.quit();
+})
 
