@@ -1,6 +1,6 @@
 {
   "name": "opal-client-4",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "ev.io client with a host of optimizations",
   "main": "js/index.js/",
   "author": "Opal",
@@ -9,8 +9,9 @@
   "tpye": "module",
   "scripts": {
     "start": "tsc && electron . ",
-    "compile": "tsc",
-    "build": "electron-builder"
+    "build": "tsc && electron-builder",
+    "comp": "tsc"
+    
   },
   "devDependencies": {
     "@types/electron": "^1.6.10",
