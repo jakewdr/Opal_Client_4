@@ -30,6 +30,8 @@ function primaryWindow() {
   app.commandLine.appendSwitch("double-buffer-compositing");
   app.commandLine.appendSwitch("force_high_performance_gpu");
   app.commandLine.appendSwitch("max-gum-fps=9999");
+  app.commandLine.appendSwitch("enable-gpu-rasterization");
+  app.commandLine.appendSwitch("enable-zero-copy");
 
   // Audio ->
 
@@ -44,7 +46,7 @@ function primaryWindow() {
 
   //General ->
 
-  app.commandLine.appendSwitch("no-sandbox-and-elevated");
+  app.commandLine.appendSwitch("no-sandbox");
   app.commandLine.appendSwitch("disable-low-end-device-mode");
   app.commandLine.appendSwitch("ignore-gpu-blacklist");
 
