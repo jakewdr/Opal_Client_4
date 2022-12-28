@@ -16,14 +16,14 @@ Opal client uses chromium switches and gama's community patch to run the game un
 
 Firstly you need yarn and node.js.
 
-Then run `'yarn install'`
+Then run `yarn install`
 
 Afterwards run 
-`'yarn run start'`
+`yarn run start`
 
 # How to build
 
-`'yarn run build'`
+`yarn run build`
 
 # Shortcuts
 
