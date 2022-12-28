@@ -98,7 +98,7 @@ function primaryWindow() {
   });
 
   win.removeMenu();
-  win.loadURL("https://ev.io/");
+  win.loadURL("https://ev.io/?ref=OpalClient");
 
  win.once("ready-to-show", () => {
     win.show();
