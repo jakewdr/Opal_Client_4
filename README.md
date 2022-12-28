@@ -38,3 +38,7 @@ Use f8 to go to the https://ev.io/user/login/ page
 Use f9 to close the app!
 
 Use f11 to go fullscreen!
+
+# Contact
+
+Contact me on discord if you have any questions
