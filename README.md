@@ -16,7 +16,7 @@ Opal client uses chromium switches and gama's community patch to run the game un
 
 Firstly you need node.js, git and install yarn globally.
 
-Run git clone 
+Run git clone https://github.com/OhPool/Opal_Client_4
 Then run `yarn install`
 
 Afterwards run 
