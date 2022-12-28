@@ -8,15 +8,17 @@
   "private": false,
   "tpye": "module",
   "scripts": {
-    "start": "tsc && electron . ",
-    "build": "tsc && electron-builder",
-    "comp": "tsc"
+    "start": "yarn run compile && electron . ",
+    "build": "yarn run compile && electron-builder",
+    "compress" : "uglifyjs --compress --mangle --no-annotations --output js/index.js/ -- js/index.js/ && uglifyjs --compress --mangle --no-annotations --output js/preload.js/ -- js/preload.js/",
+    "compile": "tsc && yarn run compress"
   },
   "devDependencies": {
     "@types/electron": "^1.6.10",
     "electron": "10.4.7",
     "electron-builder": "^23.6.0",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
+    "uglify-js": "^3.17.4"
   },
   "dependencies": {
     "v8-compile-cache": "^2.3.0"
