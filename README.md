@@ -1,13 +1,29 @@
+# Why?
+
+ev.io can run very bad on computers with a low refresh rate monitor, with the default settings in chrome a shit ton of latency is added due to vsync and some other chromium engine flaws.
+
+Opal client uses chromium switches and gama's community patch to run the game uncapped at a smooth frame rate and lower latency!
+
+# Shoutouts 
+
+[Panda](https://github.com/PandasMagic/Comp-Client) -> The preload.js file which I've adapted for this client (exit button).
+
+[MR2K](https://github.com/m2rk1312/EVClient) -> Some client ideas, and some inspiration I got from working on his client project.
+
+[Gama](https://chrome.google.com/webstore/detail/community-patch-evio/ifoamcioafnhbhakboliekfopmefahip) -> His community patch fixes some big issues with the game, the extension has been obfuscated for his code's safety!
+
 # How to run
 
 Firstly you need yarn and node.js.
 
-Then run `'yarn install'`
+Then run `yarn install`
 
 Afterwards run 
-`'yarn run compile'` and
+`yarn run start`
 
-`'yarn run start'`
+# How to build
+
+`yarn run build`
 
 # Shortcuts
 
