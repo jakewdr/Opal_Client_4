@@ -16,8 +16,10 @@ function primaryWindow() {
       contextIsolation: false,
       devTools: true,
       sandbox: false,
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'preload.js'),
+      partition: 'persist:evio'
     },
+    icon: './Opal.ico',
   });
   
   session.defaultSession.loadExtension(path.join(__dirname, "community-patch"));
@@ -101,11 +103,21 @@ function primaryWindow() {
   });
 
   win.removeMenu();
-  win.loadURL("https://ev.io/?ref=OpalClient");
-
+  win.loadURL("https://ev.io/");
+  let currentURL = win.webContents.getURL();
+  currentURL == "https://ev.io/user/login" ? null : win.loadURL('https://ev.io/');
  win.once("ready-to-show", () => {
     win.show();
   });
+
+  win.on('close', function(e) { 
+   
+    e.preventDefault();
+    win.destroy();
+    return;
+
+
+});
 }
 
 app.on("window-all-closed", function () {
