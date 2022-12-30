@@ -111,12 +111,9 @@ function primaryWindow() {
   });
 
   win.on('close', function(e) { 
-   
     e.preventDefault();
     win.destroy();
     return;
-
-
 });
 }
 
