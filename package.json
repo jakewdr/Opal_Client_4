@@ -9,6 +9,8 @@
   "tpye": "module",
   "scripts": {
     "start": "yarn run compile && electron . ",
+    "build": "yarn run compile && yarn run packager",
+    "packager": "yarn electron-packager D:/Opal_Client_4/ OpalClient --overwrite --asar --platform=win32 --arch=x64 --prune=true --out=dist --icon=Opal.ico",
     "compress": "terser --compress --mangle --no-annotations --output js/index.js/ -- js/index.js/ && terser --compress --mangle --no-annotations --output js/preload.js/ -- js/preload.js/",
     "compile": "tsc && yarn run compress"
   },
