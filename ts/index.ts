@@ -131,4 +131,3 @@ app.on("ready", () => {
 ipcMain.on('close', (event, arg) => {
   app.quit();
 })
-
