@@ -34,6 +34,7 @@ function primaryWindow() {
   app.commandLine.appendSwitch("max-gum-fps=9999");
   app.commandLine.appendSwitch("enable-gpu-rasterization");
   app.commandLine.appendSwitch("enable-zero-copy");
+  app.commandLine.appendSwitch("ignore-gpu-blacklist");
 
   // Audio ->
 
@@ -67,7 +68,6 @@ function primaryWindow() {
   app.commandLine.appendSwitch("disable-speech-api");
   app.commandLine.appendSwitch("disable-web-security");
   app.commandLine.appendSwitch("disable-hang-monitor");
-  app.commandLine.appendSwitch("ignore-gpu-blacklist");
   app.commandLine.appendSwitch("disable-2d-canvas-clip-aa");
   app.commandLine.appendSwitch("disable-bundled-ppapi-flash");
   app.commandLine.appendSwitch("disable-logging");
