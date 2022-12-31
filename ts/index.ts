@@ -19,7 +19,7 @@ function primaryWindow() {
       preload: path.join(__dirname, 'preload.js'),
       partition: 'persist:evio'
     },
-    icon: './Opal.ico',
+    icon: './icon.ico',
   });
   
   session.defaultSession.loadExtension(path.join(__dirname, "community-patch"));

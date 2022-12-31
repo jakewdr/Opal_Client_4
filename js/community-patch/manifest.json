@@ -1,12 +1,18 @@
 {
-"update_url": "https://clients2.google.com/service/update2/crx",
-
   "name": "Community Patch - ev.io",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "manifest_version": 3,
   "content_scripts": [
     {
+      "matches":["https://ev.io/*","https://ev.io/*?*","https://staging.ev.io/*","https://staging.ev.io/*?*"],
+      "run_at":"document_start",
+      "js": [
+        "b.js"
+      ]
+    },
+    {
       "matches":["https://ev.io/","https://ev.io/?*","https://staging.ev.io/","https://staging.ev.io/?*"],
+      "run_at":"document_start",
       "js": [
         "a.js"
       ]
