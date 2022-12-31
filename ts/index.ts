@@ -2,7 +2,6 @@ import { app, BrowserWindow, session, screen, clipboard, ipcMain} from "electron
 import 'v8-compile-cache'
 import path from "path";
 
-
 function primaryWindow() {
   const { width, height } = screen.getPrimaryDisplay().workAreaSize;
   const win = new BrowserWindow({
