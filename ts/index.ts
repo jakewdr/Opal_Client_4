@@ -49,8 +49,6 @@ function primaryWindow() {
   //General ->
 
   app.commandLine.appendSwitch("no-sandbox");
-  app.commandLine.appendSwitch("disable-low-end-device-mode");
-  app.commandLine.appendSwitch("ignore-gpu-blacklist");
 
   // Input ->
 
