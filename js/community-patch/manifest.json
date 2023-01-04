@@ -1,18 +1,10 @@
 {
   "name": "Community Patch - ev.io",
-  "version": "3.0.0",
-  "manifest_version": 3,
+  "manifest_version": 2,
+  "version": "2.5.0",
   "content_scripts": [
     {
-      "matches":["https://ev.io/*","https://ev.io/*?*","https://staging.ev.io/*","https://staging.ev.io/*?*"],
-      "run_at":"document_start",
-      "js": [
-        "b.js"
-      ]
-    },
-    {
-      "matches":["https://ev.io/","https://ev.io/?*","https://staging.ev.io/","https://staging.ev.io/?*"],
-      "run_at":"document_start",
+      "matches":["https://ev.io/"],
       "js": [
         "a.js"
       ]

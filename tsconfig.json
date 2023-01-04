@@ -5,6 +5,7 @@
         "target": "ESNext",
         "sourceMap": false,
         "outDir": "js",
+        "esModuleInterop": true,
         "preserveConstEnums": true,
         "removeComments": true,
         "disableSizeLimit": true

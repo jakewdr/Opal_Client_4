@@ -1,4 +1,5 @@
 import { app, BrowserWindow, session, screen, clipboard, ipcMain} from "electron";
+import os from 'os';
 import 'v8-compile-cache'
 import path from "path";
 
@@ -23,23 +24,18 @@ function primaryWindow() {
   
   session.defaultSession.loadExtension(path.join(__dirname, "community-patch"));
 
-  // Video ->
+  // Uncapped fps ->
 
   app.commandLine.appendSwitch("disable-gpu-vsync");
   app.commandLine.appendSwitch("disable-frame-rate-limit");
+  if (os.cpus()[0].model.indexOf("AMD") > -1) app.commandLine.appendSwitch('enable-zero-copy');
+
+  // GPU -> 
+
   app.commandLine.appendSwitch("enable-accelerated-2d-canvas");
-  app.commandLine.appendSwitch("double-buffer-compositing");
-  app.commandLine.appendSwitch("force_high_performance_gpu");
-  app.commandLine.appendSwitch("max-gum-fps=9999");
+  app.commandLine.appendSwitch('enable-webgl2-compute-context');
   app.commandLine.appendSwitch("enable-gpu-rasterization");
-  app.commandLine.appendSwitch("enable-zero-copy");
   app.commandLine.appendSwitch("ignore-gpu-blacklist");
-
-  // Audio ->
-
-  app.commandLine.appendSwitch("alsa-enable-upsampling");
-  app.commandLine.appendSwitch("audio-process-high-priority");
-  app.commandLine.appendSwitch("enable-exclusive-audio");
 
   // Networking ->
 
@@ -49,11 +45,7 @@ function primaryWindow() {
   //General ->
 
   app.commandLine.appendSwitch("no-sandbox");
-
-  // Input ->
-
-  app.commandLine.appendSwitch("allow-pre-commit-input");
-  app.commandLine.appendSwitch("disable-third-party-keyboard-workaround");
+  app.commandLine.appendSwitch('high-dpi-support');
 
   // Unnecessary Stuff ->
 
