@@ -25,7 +25,7 @@ Afterwards run
 
 # How to build
 
-Make sure to change the path in the package .json (In my case D:/Opal_Client_4/ to the actual path of the repo!)
+Make sure to change the path in the package .json (In my case D:/Opal_Client_4/) to the actual path of the repo!
 
 `yarn run build`
 
