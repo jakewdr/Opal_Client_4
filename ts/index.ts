@@ -28,15 +28,15 @@ function primaryWindow() {
 
   app.commandLine.appendSwitch("disable-gpu-vsync");
   app.commandLine.appendSwitch("disable-frame-rate-limit");
-  if (os.cpus()[0].model.indexOf("AMD") > -1) app.commandLine.appendSwitch('enable-zero-copy');
-
+  
   // GPU -> 
 
-  app.commandLine.appendSwitch("enable-accelerated-2d-canvas");
-  app.commandLine.appendSwitch('enable-webgl2-compute-context');
+  app.commandLine.appendSwitch("double-buffer-compositing");
   app.commandLine.appendSwitch("enable-gpu-rasterization");
   app.commandLine.appendSwitch("ignore-gpu-blacklist");
-
+  app.commandLine.appendSwitch("disable-accelerated-video-decode", "false");
+  app.commandLine.appendSwitch("use-gl=egl");
+  app.commandLine.appendSwitch('use-angle', 'GLES');
   // Networking ->
 
   app.commandLine.appendSwitch("disable-background-networking");
@@ -45,7 +45,6 @@ function primaryWindow() {
   //General ->
 
   app.commandLine.appendSwitch("no-sandbox");
-  app.commandLine.appendSwitch('high-dpi-support');
 
   // Unnecessary Stuff ->
 
@@ -64,6 +63,7 @@ function primaryWindow() {
   app.commandLine.appendSwitch("disable-background-timer-throttling");
   app.commandLine.appendSwitch("disable-backing-store-limit");
   app.commandLine.appendSwitch("disable-web-security", "true")
+
  
   win.webContents.on("before-input-event", (event, input) => {
   if (input.key === "F5") {
