@@ -23,5 +23,8 @@
   },
   "dependencies": {
     "v8-compile-cache": "^2.3.0"
+  },
+  "engines" : { 
+    "node" : ">=12.0.0 <13.0.0"
   }
 }
