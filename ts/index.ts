@@ -59,10 +59,8 @@ function switches () {
   app.commandLine.appendSwitch("disable-web-security", "true")
   app.commandLine.appendSwitch("disable-component-extensions-with-background-pages");
   app.commandLine.appendSwitch("disable-stack-profiler");
-
-  // Disabling vulkan ->
-
   app.commandLine.appendSwitch('disable-features', 'Vulkan');
+
 }
 
 function primaryWindow() {
@@ -84,7 +82,7 @@ function primaryWindow() {
     icon: './icon.ico',
   });
   
-  session.defaultSession.loadExtension(path.join(__dirname, "community-patch"));
+  
   switches();
  
   win.webContents.on("before-input-event", (event, input) => {
@@ -114,6 +112,7 @@ function primaryWindow() {
   });
 
   win.removeMenu();
+  session.defaultSession.loadExtension(path.join(__dirname, "community-patch"));
   win.loadURL("https://ev.io/");
   let currentURL = win.webContents.getURL();
   currentURL == "https://ev.io/user/login" ? null : win.loadURL('https://ev.io/');

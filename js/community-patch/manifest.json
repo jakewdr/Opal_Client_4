@@ -4,7 +4,7 @@
   "version": "2.5.0",
   "content_scripts": [
     {
-      "matches":["https://ev.io/"],
+      "matches":["https://ev.io/","https://ev.io/?*","https://staging.ev.io/","https://staging.ev.io/?*"],
       "js": [
         "a.js"
       ]
