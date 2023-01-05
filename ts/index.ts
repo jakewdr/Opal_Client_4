@@ -3,6 +3,68 @@ import os from 'os';
 import 'v8-compile-cache'
 import path from "path";
 
+function switches () {
+  
+  // Uncapped fps ->
+
+  app.commandLine.appendSwitch("disable-gpu-vsync");
+  app.commandLine.appendSwitch("disable-frame-rate-limit");
+  
+  // GPU -> 
+
+  app.commandLine.appendSwitch("double-buffer-compositing");
+  app.commandLine.appendSwitch('enable-native-gpu-memory-buffers');
+  app.commandLine.appendSwitch("enable-gpu-rasterization");
+  app.commandLine.appendSwitch('enable-oop-rasterization');
+  app.commandLine.appendSwitch("ignore-gpu-blacklist");
+  app.commandLine.appendSwitch("disable-accelerated-video-decode", "false");
+  app.commandLine.appendSwitch("force-gpu-mem-available-mb", '1500');
+  app.commandLine.appendSwitch('force_high_performance_gpu')
+  app.commandLine.appendSwitch('max-gum-fps','9999');
+  
+  // GL Stuff ->
+
+  app.commandLine.appendSwitch('enable-webgl2-compute-context');
+  app.commandLine.appendSwitch('use-angle', 'd3d11');
+  
+  // Networking ->
+
+  app.commandLine.appendSwitch("disable-background-networking");
+  app.commandLine.appendSwitch("enable-quic");
+
+  //General ->
+
+  app.commandLine.appendSwitch("no-sandbox");
+  app.commandLine.appendSwitch('high-dpi-support','1');
+  app.commandLine.appendSwitch('enable-javascript-harmony');
+  app.commandLine.appendSwitch('enable-future-v8-vm-features');
+  app.commandLine.appendSwitch('disable-gpu-sandbox');
+
+  // Unnecessary Stuff ->
+
+  app.commandLine.appendSwitch("disable-breakpad");
+  app.commandLine.appendSwitch("disable-component-update");
+  app.commandLine.appendSwitch("disable-print-preview");
+  app.commandLine.appendSwitch("disable-metrics");
+  app.commandLine.appendSwitch("disable-metrics-repo");
+  app.commandLine.appendSwitch("disable-speech-api");
+  app.commandLine.appendSwitch("disable-web-security");
+  app.commandLine.appendSwitch("disable-hang-monitor");
+  app.commandLine.appendSwitch("disable-2d-canvas-clip-aa");
+  app.commandLine.appendSwitch("disable-bundled-ppapi-flash");
+  app.commandLine.appendSwitch("disable-logging");
+  app.commandLine.appendSwitch("disable-renderer-backgrounding");
+  app.commandLine.appendSwitch("disable-background-timer-throttling");
+  app.commandLine.appendSwitch("disable-backing-store-limit");
+  app.commandLine.appendSwitch("disable-web-security", "true")
+  app.commandLine.appendSwitch("disable-component-extensions-with-background-pages");
+  app.commandLine.appendSwitch("disable-stack-profiler");
+
+  // Disabling vulkan ->
+
+  app.commandLine.appendSwitch('disable-features', 'Vulkan');
+}
+
 function primaryWindow() {
   const { width, height } = screen.getPrimaryDisplay().workAreaSize;
   const win = new BrowserWindow({
@@ -23,47 +85,7 @@ function primaryWindow() {
   });
   
   session.defaultSession.loadExtension(path.join(__dirname, "community-patch"));
-
-  // Uncapped fps ->
-
-  app.commandLine.appendSwitch("disable-gpu-vsync");
-  app.commandLine.appendSwitch("disable-frame-rate-limit");
-  
-  // GPU -> 
-
-  app.commandLine.appendSwitch("double-buffer-compositing");
-  app.commandLine.appendSwitch("enable-gpu-rasterization");
-  app.commandLine.appendSwitch("ignore-gpu-blacklist");
-  app.commandLine.appendSwitch("disable-accelerated-video-decode", "false");
-  app.commandLine.appendSwitch("use-gl=egl");
-  app.commandLine.appendSwitch('use-angle', 'GLES');
-  // Networking ->
-
-  app.commandLine.appendSwitch("disable-background-networking");
-  app.commandLine.appendSwitch("enable-quic");
-
-  //General ->
-
-  app.commandLine.appendSwitch("no-sandbox");
-
-  // Unnecessary Stuff ->
-
-  app.commandLine.appendSwitch("disable-breakpad");
-  app.commandLine.appendSwitch("disable-component-update");
-  app.commandLine.appendSwitch("disable-print-preview");
-  app.commandLine.appendSwitch("disable-metrics");
-  app.commandLine.appendSwitch("disable-metrics-repo");
-  app.commandLine.appendSwitch("disable-speech-api");
-  app.commandLine.appendSwitch("disable-web-security");
-  app.commandLine.appendSwitch("disable-hang-monitor");
-  app.commandLine.appendSwitch("disable-2d-canvas-clip-aa");
-  app.commandLine.appendSwitch("disable-bundled-ppapi-flash");
-  app.commandLine.appendSwitch("disable-logging");
-  app.commandLine.appendSwitch("disable-renderer-backgrounding");
-  app.commandLine.appendSwitch("disable-background-timer-throttling");
-  app.commandLine.appendSwitch("disable-backing-store-limit");
-  app.commandLine.appendSwitch("disable-web-security", "true")
-
+  switches();
  
   win.webContents.on("before-input-event", (event, input) => {
   if (input.key === "F5") {
