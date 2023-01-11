@@ -19,6 +19,7 @@ function switches () {
   app.commandLine.appendSwitch('enable-oop-rasterization');
   app.commandLine.appendSwitch('enable-native-gpu-memory-buffers');
   app.commandLine.appendSwitch('enable-gpu-memory-buffer-compositor-resources');
+  app.commandLine.appendSwitch('double-buffer-compositing'); 
   app.commandLine.appendSwitch("force-gpu-mem-available-mb", '1500');
   app.commandLine.appendSwitch("force-gpu-mem-discardable-limit-mb", '500');
   app.commandLine.appendSwitch('enable-webgl2-compute-context');
