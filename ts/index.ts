@@ -1,7 +1,5 @@
-import { app, BrowserWindow, session, screen, clipboard, ipcMain} from "electron";
+import { app, BrowserWindow, session, screen, clipboard, ipcMain} from "electron"; import 'v8-compile-cache'; import path from "path";
 var { cpus } = require("os");
-import 'v8-compile-cache'
-import path from "path";
 
 function switches () {
   
@@ -78,7 +76,7 @@ function switches () {
   app.commandLine.appendSwitch("disable-stack-profiler");
   app.commandLine.appendSwitch("enable-background-thread-pool");
   
-}
+};
 
 function primaryWindow() {
   const { width, height } = screen.getPrimaryDisplay().workAreaSize;
