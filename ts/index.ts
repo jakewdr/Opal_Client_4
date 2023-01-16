@@ -9,6 +9,7 @@ function switches () {
 
   app.commandLine.appendSwitch("disable-gpu-vsync");
   app.commandLine.appendSwitch("disable-frame-rate-limit");
+  app.commandLine.appendSwitch("max-gum-fps","9999");
   if (cpus()[0].model.includes("AMD")) {
     app.commandLine.appendSwitch("enable-zero-copy");
   }
@@ -128,9 +129,8 @@ function primaryWindow() {
 
   win.removeMenu();
   session.defaultSession.loadExtension(path.join(__dirname, "community-patch"));
-  win.loadURL("https://ev.io/");
-  let currentURL = win.webContents.getURL();
-  currentURL == "https://ev.io/user/login" ? null : win.loadURL('https://ev.io/');
+  win.loadFile("./html/index.html/");
+
  win.once("ready-to-show", () => {
     win.show();
   });
