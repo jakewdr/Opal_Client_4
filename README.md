@@ -8,7 +8,7 @@ Opal client uses chromium switches and gama's community patch to run the game un
 
 [Panda](https://github.com/PandasMagic/Comp-Client) -> The preload.js file which I've adapted for this client (exit button).
 
-[MR2K](https://github.com/m2rk1312/EVClient) -> Some client ideas, and some inspiration I got from working on his client project.
+[MR2K](https://github.com/m2rk1312) -> Some client ideas, and some inspiration I got from working on his client project.
 
 [Gama](https://chrome.google.com/webstore/detail/community-patch-evio/ifoamcioafnhbhakboliekfopmefahip) -> His community patch fixes some big issues with the game, the extension has been obfuscated for his code's safety!
 
