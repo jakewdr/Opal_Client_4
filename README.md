@@ -25,8 +25,6 @@ Afterwards run
 
 # How to build
 
-Make sure to change the path in the package .json (In my case D:/Opal_Client_4/) to the actual path of the repo!
-
 `yarn run build`
 
 This command will create an unpacked windows version of the client.
@@ -43,7 +41,7 @@ Use f8 to go to the https://ev.io/user/login/ page
 
 Use f9 to close the app!
 
-Use f11 to go fullscreen!
+Use f11 to go full-screen!
 
 # Contact
 

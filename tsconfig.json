@@ -1,14 +1,14 @@
 {
     "compilerOptions": {
-        "module": "NodeNext",
-        "moduleResolution": "Node16",
-        "target": "ESNext",
-        "sourceMap": false,
         "outDir": "js",
-        "esModuleInterop": true,
-        "preserveConstEnums": true,
+        "module": "NodeNext",
+        "target": "ESNext",
+        "moduleResolution": "Node16",
+        "sourceMap": false,
         "removeComments": true,
-        "disableSizeLimit": true
+        "esModuleInterop": true,
+        "disableSizeLimit": true,
+        "preserveConstEnums": true
     },
     "include": ["ts/**/*"]
 }
