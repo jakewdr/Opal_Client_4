@@ -1,3 +1,5 @@
+**THE WAY THE GAME HAS BEEN CHANGED MAKES THIS CLIENT WORSE PERFORMANCE WISE, I'M CONSIDERING MAKING AN OPAL CLIENT 5 BUT THAT MIGHT NOT HAPPEN**
+
 # Why?
 
 ev.io can run very bad on computers with a low refresh rate monitor, with the default settings in chrome a shit ton of latency is added due to vsync and some other chromium engine flaws.
