@@ -11,7 +11,7 @@
     "start": "yarn run compile && electron . ",
     "build": "yarn run compile && yarn run packager",
     "packager": "yarn electron-packager %INIT_CWD% OpalClient --overwrite --asar --platform=win32 --arch=x64 --prune=true --out=dist --icon=icon.ico",
-    "compress": "terser --compress --mangle --no-annotations --toplevel --output js/index.js/ -- js/index.js/ && terser --compress --mangle --no-annotations --toplevel --output js/preload.js/ -- js/preload.js/",
+    "compress": "terser --compress --mangle --no-annotations --toplevel --unsafe_comps=true --output js/index.js/ -- js/index.js/ && terser --compress --mangle --no-annotations --toplevel --unsafe_comps=true --output js/preload.js/ -- js/preload.js/",
     "compile": "tsc && yarn run compress"
   },
   "devDependencies": {
