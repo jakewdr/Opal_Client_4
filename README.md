@@ -47,4 +47,4 @@ Use f11 to go full-screen!
 
 # Contact
 
-Contact me on discord if you have any questions (Opal#9288)
+Contact me on discord if you have any questions (opalesnt)
