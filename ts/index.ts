@@ -14,12 +14,12 @@ var { cpus } = require("os");
 function switches() {
 	// Uncapped fps ->
 
-	app.commandLine.appendSwitch("disable-gpu-vsync");
-	app.commandLine.appendSwitch("disable-frame-rate-limit");
-	app.commandLine.appendSwitch("max-gum-fps", "9999");
-	if (cpus()[0].model.includes("AMD")) {
-		app.commandLine.appendSwitch("enable-zero-copy");
-	}
+	//app.commandLine.appendSwitch("disable-gpu-vsync");
+	//app.commandLine.appendSwitch("disable-frame-rate-limit");
+	//app.commandLine.appendSwitch("max-gum-fps", "9999");
+	//if (cpus()[0].model.includes("AMD")) {
+	//	app.commandLine.appendSwitch("enable-zero-copy");
+	//}
 
 	// GPU ->
 
@@ -122,9 +122,9 @@ function primaryWindow() {
 	});
 
 	win.removeMenu();
-	session.defaultSession.loadExtension(
-		path.join(__dirname, "community-patch"),
-	);
+	//session.defaultSession.loadExtension(
+		//path.join(__dirname, "community-patch"),
+	//);
 	win.loadFile("./html/index.html/");
 
 	win.once("ready-to-show", () => {
