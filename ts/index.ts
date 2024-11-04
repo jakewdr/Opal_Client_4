@@ -57,9 +57,9 @@ function primaryWindow() {
     });
 
     win.removeMenu();
-    session.defaultSession.loadExtension(
-        path.join(__dirname, "community-patch"),
-    );
+    //session.defaultSession.loadExtension(
+    //    path.join(__dirname, "community-patch"),
+    //);
     win.loadFile("index.html");
 
     win.once("ready-to-show", () => {
