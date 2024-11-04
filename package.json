@@ -1,32 +1,32 @@
 {
-  "name": "opal-client-4",
-  "version": "4.2.0",
-  "description": "ev.io client with a host of optimizations",
-  "main": "js/index.js/",
-  "author": "opal",
-  "license": "MIT",
-  "private": false,
-  "scripts": {
-    "start": "yarn run compile && electron . ",
-    "build": "yarn run compile && yarn run packager",
-    "packager": "yarn run compile && yarn electron-packager %INIT_CWD% OpalClient --overwrite --asar --platform=win32 --arch=x64 --prune=true --out=dist --icon=icon.ico",
-    "compile": "yarn run format && yarn run bundle",
-    "bundle": "node esbuild.mjs",
-    "format": "yarn biome check --write"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@types/electron": "^1.6.10",
-    "electron": "10.4.7",
-    "electron-packager": "^17.1.1",
-    "esbuild": "^0.24.0",
-    "terser": "^5.16.1",
-    "typescript": "^5.0.2"
-  },
-  "dependencies": {
-    "v8-compile-cache": "^2.3.0"
-  },
-  "engines": {
-    "node": ">=16.0.0"
-  }
+    "name": "opal-client-4",
+    "version": "4.3.0",
+    "description": "ev.io client with a host of optimizations",
+    "main": "out/index.js/",
+    "author": "jake",
+    "license": "MIT",
+    "private": false,
+    "scripts": {
+        "start": "yarn run compile && electron . ",
+        "build": "yarn run compile && yarn run packager",
+        "packager": "yarn run compile && node packager.mjs",
+        "compile": "yarn run format && yarn run bundle",
+        "bundle": "node esbuild.mjs",
+        "format": "yarn biome check --write"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "1.9.4",
+        "@types/electron": "^1.6.10",
+        "electron": "10.4.7",
+        "electron-packager": "^17.1.1",
+        "esbuild": "^0.24.0",
+        "terser": "^5.16.1",
+        "typescript": "^5.0.2"
+    },
+    "dependencies": {
+        "v8-compile-cache": "^2.3.0"
+    },
+    "engines": {
+        "node": ">=16.0.0"
+    }
 }

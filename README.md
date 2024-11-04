@@ -1,5 +1,3 @@
-**THE WAY THE GAME HAS BEEN CHANGED MAKES THIS CLIENT WORSE PERFORMANCE WISE, I'M CONSIDERING MAKING AN OPAL CLIENT 5 BUT THAT MIGHT NOT HAPPEN**
-
 # Why?
 
 ev.io can run very bad on computers with a low refresh rate monitor, with the default settings in chrome a shit ton of latency is added due to vsync and some other chromium engine flaws.
@@ -18,16 +16,21 @@ Opal client uses chromium switches and gama's community patch to run the game un
 
 Firstly you need [node.js](https://nodejs.org/) (version 16 or above), [git](https://git-scm.com/downloads) and install [yarn](https://www.npmjs.com/package/yarn) globally.
 
-Run `git clone https://github.com/OhPool/Opal_Client_4`
+Run:
 
-Then run `yarn install`
+    git clone https://github.com/OhPool/Opal_Client_4
 
-Afterwards run 
-`yarn run start`
+Then run:
+
+    yarn install
+
+Finally run: 
+
+    yarn run start
 
 # How to build
 
-`yarn run build`
+    yarn run build
 
 This command will create an unpacked windows version of the client.
 
@@ -47,4 +50,8 @@ Use f11 to go full-screen!
 
 # Contact
 
-Contact me on discord if you have any questions (opalesnt)
+Contact me on discord if you have any questions (slintfan)
+
+# Contribution
+
+Please submit pull requests if this is something you are interested in (I'd probably merge them)
