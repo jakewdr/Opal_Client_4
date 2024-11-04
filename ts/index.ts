@@ -60,7 +60,7 @@ function primaryWindow() {
     //session.defaultSession.loadExtension(
     //    path.join(__dirname, "community-patch"),
     //);
-    win.loadFile("index.html");
+    win.loadFile("out/index.html");
 
     win.once("ready-to-show", () => {
         win.show();
