@@ -1,11 +1,4 @@
-import {
-    BrowserWindow,
-    app,
-    clipboard,
-    ipcMain,
-    screen,
-    session,
-} from "electron";
+import { BrowserWindow, app, clipboard, ipcMain, screen } from "electron";
 import "v8-compile-cache";
 import path from "path";
 
@@ -17,7 +10,6 @@ function primaryWindow() {
         webPreferences: {
             nodeIntegration: false,
             nodeIntegrationInWorker: false,
-            enableRemoteModule: true,
             webSecurity: false,
             contextIsolation: false,
             devTools: false,
@@ -57,11 +49,7 @@ function primaryWindow() {
     });
 
     win.removeMenu();
-    //session.defaultSession.loadExtension(
-    //    path.join(__dirname, "community-patch"),
-    //);
     win.loadFile("out/index.html");
-
     win.once("ready-to-show", () => {
         win.show();
     });
@@ -82,8 +70,10 @@ function switches() {
         "disable-software-rasterizer",
         "disable-software-compositing-fallback",
         "disable-gpu-process-crash-limit",
-        "force_high_performance_gpu",
-        "disable-low-end-device-mode",
+        "force-gpu-rasterization",
+        "disable-frame-rate-limit",
+        "disable-2d-canvas-clip-aa",
+        "enable-skia-graphite",
 
         // Networking ->
 
@@ -107,9 +97,12 @@ function switches() {
 
     // Double argument ones ->
 
-    app.commandLine.appendSwitch("use-angle", "d3d9");
+    app.commandLine.appendSwitch("use-angle", "OpenGL");
     app.commandLine.appendSwitch("high-dpi-support", "1");
     app.commandLine.appendSwitch("v8-cache-options", "code");
+
+    app.commandLine.appendSwitch("canvas-msaa-sample-count", "0");
+    app.commandLine.appendSwitch("ebgl-antialiasing-mode", "none");
 
     console.log("Flags applied");
 }
