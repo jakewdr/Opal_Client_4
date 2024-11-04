@@ -20,7 +20,7 @@
         "electron": "22.3.25",
         "electron-packager": "^17.1.1",
         "esbuild": "^0.24.0",
-        "terser": "^5.16.1",
+        "terser": "^5.36.0",
         "typescript": "^5.0.2"
     },
     "dependencies": {
