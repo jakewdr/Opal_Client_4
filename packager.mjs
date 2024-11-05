@@ -9,14 +9,13 @@ let packagerOptions =  {
     out: "dist",
     icon: "icon.ico",
 
-    asar: true,
+    asar: false,
     overwrite: true,
     prune: true,
 
     ignore: [
         ".github",
         "dist",
-        "ts",
         "ts",
         ".gitignore",
         "biome.json",

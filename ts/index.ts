@@ -49,7 +49,7 @@ function primaryWindow() {
     });
 
     win.removeMenu();
-    win.loadFile("out/index.html");
+    win.loadURL("https://ev.io");
     win.once("ready-to-show", () => {
         win.show();
     });

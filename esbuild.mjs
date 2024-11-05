@@ -1,11 +1,12 @@
-import * as esbuild from "esbuild";
+import esbuild from "esbuild";
 
 await esbuild.build({
     entryPoints: ["ts/index.ts", "ts/preload.ts"],
     outdir: "out/",
+    format: "cjs",
     tsconfig: "tsconfig.json",
     target: ["node16"],
-    packages: "external",
+    external: ["electron"],
     platform: "node",
     bundle: true,
     minify: true,
