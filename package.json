@@ -16,7 +16,7 @@
     },
     "devDependencies": {
         "@biomejs/biome": "1.9.4",
-        "@types/electron": "^1.6.10",
+        "@types/electron": "^1.6.12",
         "electron": "^33.0.2",
         "electron-packager": "^17.1.1",
         "esbuild": "^0.24.0",
