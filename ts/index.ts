@@ -68,6 +68,7 @@ function switches() {
         "enable-accelerated-2d-canvas",
         "disable-gpu-vsync",
         "disable-software-rasterizer",
+        "disable-renderer-backgrounding",
         "disable-software-compositing-fallback",
         "disable-gpu-process-crash-limit",
         "force-gpu-rasterization",

@@ -7,12 +7,12 @@
     "license": "MIT",
     "private": false,
     "scripts": {
-        "start": "yarn run compile && electron ./out/index.js",
-        "build": "yarn run compile && yarn run packager",
-        "packager": "yarn run compile && node packager.mjs",
+        "start": "yarn compile && electron ./out/index.js",
+        "build": "yarn compile && yarn packager",
         "compile": "yarn run format && yarn run bundle",
-        "bundle": "node esbuild.mjs",
-        "format": "yarn biome check --write"
+        "format": "biome check --write",
+        "packager": "node packager.mjs --optimize_for_size",
+        "bundle": "node esbuild.mjs --optimize_for_size"
     },
     "devDependencies": {
         "@biomejs/biome": "1.9.4",
