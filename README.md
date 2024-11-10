@@ -1,8 +1,6 @@
 # Why?
 
-ev.io can run very bad on computers with a low refresh rate monitor, with the default settings in chrome a shit ton of latency is added due to vsync and some other chromium engine flaws.
-
-Opal client uses chromium switches and gama's community patch to run the game uncapped at a smooth frame rate and lower latency!
+ev.io can run very bad on computers with with the default settings in chrome adding lots of latency due to vsync and some other chromium engine flaws.
 
 # Shoutouts 
 
