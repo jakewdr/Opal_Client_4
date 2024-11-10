@@ -1,13 +1,13 @@
 {
     "name": "opal-client-4",
-    "version": "4.3.0",
+    "version": "4.4.0",
     "description": "ev.io client with a host of optimizations",
-    "main": "out/index.js",
+    "main": "out/bundle.js",
     "author": "jake",
     "license": "MIT",
     "private": false,
     "scripts": {
-        "start": "yarn compile && electron ./out/index.js",
+        "start": "yarn compile && electron ./out/bundle.js",
         "build": "yarn compile && yarn packager",
         "compile": "yarn run format && yarn run bundle",
         "format": "biome check --write",

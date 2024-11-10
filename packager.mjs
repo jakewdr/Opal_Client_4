@@ -9,7 +9,7 @@ let packagerOptions =  {
     out: "dist",
     icon: "icon.ico",
 
-    asar: false,
+    asar: true,
     overwrite: true,
     prune: true,
 
