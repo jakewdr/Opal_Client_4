@@ -1,4 +1,4 @@
-import packager from "electron-packager"
+import packager from "@electron/packager"
 
 let packagerOptions =  {
     name: "OpalClient",

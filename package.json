@@ -7,25 +7,25 @@
     "license": "MIT",
     "private": false,
     "scripts": {
-        "start": "yarn compile && electron ./out/bundle.js",
-        "build": "yarn compile && yarn packager",
-        "compile": "yarn run format && yarn run bundle",
+        "start": "pnpm compile && electron ./out/bundle.js",
+        "build": "pnpm compile && pnpm packager",
+        "compile": "pnpm run format && pnpm run bundle",
         "format": "biome check --write",
         "packager": "node packager.mjs --optimize_for_size",
         "bundle": "node esbuild.mjs --optimize_for_size"
     },
     "devDependencies": {
         "@biomejs/biome": "1.9.4",
-        "@types/electron": "^1.6.12",
+        "@electron/packager": "^18.3.6",
         "electron": "^33.3.1",
-        "electron-packager": "^17.1.1",
         "esbuild": "^0.24.2",
         "typescript": "^5.7.3"
     },
     "dependencies": {
-        "v8-compile-cache": "^2.3.0"
+        "v8-compile-cache": "^2.4.0"
     },
     "engines": {
         "node": ">=16.0.0"
-    }
+    },
+    "packageManager": "pnpm@9.15.0"
 }
