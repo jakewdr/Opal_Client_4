@@ -12,7 +12,7 @@ ev.io can run very bad on computers with with the default settings in chrome add
 
 # How to run
 
-Firstly you need [node.js](https://nodejs.org/) (version 16 or above), [git](https://git-scm.com/downloads) and install [yarn](https://www.npmjs.com/package/yarn) globally.
+Firstly you need [node.js](https://nodejs.org/) (version 16 or above), [git](https://git-scm.com/downloads) and install [pnpm](https://pnpm.io/) globally.
 
 Run:
 
@@ -20,15 +20,15 @@ Run:
 
 Then run:
 
-    yarn install
+    pnpm install
 
 Finally run: 
 
-    yarn run start
+    pnpm start
 
 # How to build
 
-    yarn run build
+    pnpm build
 
 This command will create an unpacked windows version of the client.
 
@@ -48,7 +48,7 @@ Use f11 to go full-screen!
 
 # Contact
 
-Contact me on discord if you have any questions (slintfan)
+Contact me on discord if you have any questions (opalfrags)
 
 # Contribution
 
