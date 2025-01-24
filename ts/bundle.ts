@@ -12,6 +12,6 @@ app.on("window-all-closed", () => {
     }
 });
 
-ipcMain.on("close", (event, arg) => {
+ipcMain.on("close", () => {
     app.quit();
 });
