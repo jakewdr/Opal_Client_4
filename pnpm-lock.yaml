@@ -19,8 +19,8 @@ importers:
         specifier: ^18.3.6
         version: 18.3.6
       electron:
-        specifier: ^34.3.4
-        version: 34.3.4
+        specifier: ^35.1.0
+        version: 35.1.0
       esbuild:
         specifier: ^0.24.2
         version: 0.24.2
@@ -290,11 +290,8 @@ packages:
   '@types/keyv@3.1.4':
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
 
-  '@types/node@20.17.24':
-    resolution: {integrity: sha512-d7fGCyB96w9BnWQrOsJtpyiSaBcAYYr75bnK6ZRjDbql2cGLj/3GsL5OYmLPNq76l7Gf2q4Rv9J2o6h5CrD9sA==}
-
-  '@types/node@22.13.10':
-    resolution: {integrity: sha512-I6LPUvlRH+O6VRUqYOcMudhaIdUVWfsjnZavnsraHvpBwaEyMN29ry+0UVJhImYL16xsscu0aske3yA+uPOWfw==}
+  '@types/node@22.13.13':
+    resolution: {integrity: sha512-ClsL5nMwKaBRwPcCvH8E7+nU4GxHVx1axNvMZTFHMEfNI7oahimt26P5zjVCRrjiIWj6YFXfE1v3dEp94wLcGQ==}
 
   '@types/responselike@1.0.3':
     resolution: {integrity: sha512-H/+L+UkTV33uf49PH5pCAUBVPNj2nDBXTN+qS1dOwyyg24l3CcicicCA7ca+HMvJBZcFgl5r8e+RR6elsb4Lyw==}
@@ -408,8 +405,8 @@ packages:
   dir-compare@4.2.0:
     resolution: {integrity: sha512-2xMCmOoMrdQIPHdsTawECdNPwlVFB9zGcz3kuhmBO6U3oU+UQjsue0i8ayLKpgBcm+hcXPMVSGUN9d+pvJ6+VQ==}
 
-  electron@34.3.4:
-    resolution: {integrity: sha512-bIsjBh5EN229K4orJpVfjLb7JEoCYkUVg3tS981E1elEjvhBITqwm+K1j9goEqMIlxqYWgogREYpSZRQ+aLWgQ==}
+  electron@35.1.0:
+    resolution: {integrity: sha512-yHaKPlsgDgjkwsiXgJG5DAmr9BgD4wSxtDGL6aBmUaN7QTs6qppNgtGkjHsS/pXJb4ZZBIH4IpPAx9d59Epbeg==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -831,9 +828,6 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  undici-types@6.19.8:
-    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
-
   undici-types@6.20.0:
     resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
 
@@ -1099,30 +1093,26 @@ snapshots:
     dependencies:
       '@types/http-cache-semantics': 4.0.4
       '@types/keyv': 3.1.4
-      '@types/node': 22.13.10
+      '@types/node': 22.13.13
       '@types/responselike': 1.0.3
 
   '@types/http-cache-semantics@4.0.4': {}
 
   '@types/keyv@3.1.4':
     dependencies:
-      '@types/node': 22.13.10
+      '@types/node': 22.13.13
 
-  '@types/node@20.17.24':
-    dependencies:
-      undici-types: 6.19.8
-
-  '@types/node@22.13.10':
+  '@types/node@22.13.13':
     dependencies:
       undici-types: 6.20.0
 
   '@types/responselike@1.0.3':
     dependencies:
-      '@types/node': 22.13.10
+      '@types/node': 22.13.13
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 22.13.10
+      '@types/node': 22.13.13
     optional: true
 
   '@xmldom/xmldom@0.8.10': {}
@@ -1219,10 +1209,10 @@ snapshots:
       minimatch: 3.1.2
       p-limit: 3.1.0
 
-  electron@34.3.4:
+  electron@35.1.0:
     dependencies:
       '@electron/get': 2.0.3
-      '@types/node': 20.17.24
+      '@types/node': 22.13.13
       extract-zip: 2.0.1
     transitivePeerDependencies:
       - supports-color
@@ -1683,8 +1673,6 @@ snapshots:
     optional: true
 
   typescript@5.8.2: {}
-
-  undici-types@6.19.8: {}
 
   undici-types@6.20.0: {}
 
