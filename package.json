@@ -19,7 +19,7 @@
         "@electron/packager": "^18.3.6",
         "electron": "^34.3.4",
         "esbuild": "^0.24.2",
-        "typescript": "^5.8.2"
+        "typescript": "^5.8.3"
     },
     "dependencies": {
         "v8-compile-cache": "^2.4.0"
