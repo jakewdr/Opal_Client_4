@@ -48,7 +48,7 @@ Use f11 to go full-screen!
 
 # Contact
 
-Contact me on discord if you have any questions (opalfrags)
+Contact me on discord if you have any questions (opzl)
 
 # Contribution
 
