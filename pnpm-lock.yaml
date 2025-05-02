@@ -19,8 +19,8 @@ importers:
         specifier: ^18.3.6
         version: 18.3.6
       electron:
-        specifier: ^36.0.1
-        version: 36.0.1
+        specifier: ^36.1.0
+        version: 36.1.0
       esbuild:
         specifier: ^0.25.3
         version: 0.25.3
@@ -405,8 +405,8 @@ packages:
   dir-compare@4.2.0:
     resolution: {integrity: sha512-2xMCmOoMrdQIPHdsTawECdNPwlVFB9zGcz3kuhmBO6U3oU+UQjsue0i8ayLKpgBcm+hcXPMVSGUN9d+pvJ6+VQ==}
 
-  electron@36.0.1:
-    resolution: {integrity: sha512-78DIXNi4W6ojeMt+O9/z+Miojioh1MW4H3oH+1sXwRpcu98RzxkW1/MjRvP0o0xiE6L1ZkoUkGDGC3E933YBAA==}
+  electron@36.1.0:
+    resolution: {integrity: sha512-gnp3BnbKdGsVc7cm1qlEaZc8pJsR08mIs8H/yTo8gHEtFkGGJbDTVZOYNAfbQlL0aXh+ozv+CnyiNeDNkT1Upg==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -1209,7 +1209,7 @@ snapshots:
       minimatch: 3.1.2
       p-limit: 3.1.0
 
-  electron@36.0.1:
+  electron@36.1.0:
     dependencies:
       '@electron/get': 2.0.3
       '@types/node': 22.15.3
