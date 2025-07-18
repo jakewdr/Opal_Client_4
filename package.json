@@ -15,7 +15,7 @@
         "bundle": "node esbuild.mjs --optimize_for_size"
     },
     "devDependencies": {
-        "@biomejs/biome": "1.9.4",
+        "@biomejs/biome": "2.1.2",
         "@electron/packager": "^18.3.6",
         "electron": "^36.0.1",
         "esbuild": "^0.25.3",
